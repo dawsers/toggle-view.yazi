@@ -1,11 +1,6 @@
 # toggle-view.yazi
 
-Toggle different views: maximized preview, disabled preview, only current,
-and default.
-
-Merging [max-preview.yazi](https://github.com/yazi-rs/plugins/tree/main/max-preview.yazi)
-and [hide-preview.yazi](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi)
-to provide both functionalities in one plugin (keystroke).
+Toggle the different views: parent, current and preview.
 
 ## Installation
 
@@ -20,9 +15,14 @@ Add this to your `~/.config/yazi/keymap.toml`:
 ``` toml
 [manager]
 prepend_keymap = [
-    { on   = "T", run  = "plugin --sync toggle-view", desc = "Toggle views" },
+    { on = "<C-1>", run = "plugin --sync toggle-view --args=parent", desc = "Toggle parent" },
+    { on = "<C-2>", run = "plugin --sync toggle-view --args=current", desc = "Toggle current" },
+    { on = "<C-3>", run = "plugin --sync toggle-view --args=preview", desc = "Toggle preview" },
 ]
 ```
 
-Make sure the <kbd>T</kbd> key is not used elsewhere.
+Now each key will toggle on/off one of the three panels: `Ctrl+1` for
+*parent*, `Ctrl+2` for *current* and `Ctrl+3` for *preview*.
+
+You can set your own key bindings.
 
