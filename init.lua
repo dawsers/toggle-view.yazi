@@ -9,9 +9,14 @@ local function entry(st, args)
     st.old_parent = MANAGER.ratio.parent
     st.old_current = MANAGER.ratio.current
     st.old_preview = MANAGER.ratio.preview
-    st.parent = st.old_parent
-    st.current = st.old_current
-    st.preview = st.old_preview
+
+    -- Get current tab ratios
+    local all_old = st.old_parent + st.old_current + st.old_preview
+    local area = ui.Rect { x= 0, y = 0, w = all_old, h = 10 }
+    local tab = Tab:new(area, cx.active)
+    st.parent = tab._chunks[1].w
+    st.current = tab._chunks[2].w
+    st.preview = tab._chunks[3].w
     st.layout = Tab.layout
     st.view = true -- initialized
   end
