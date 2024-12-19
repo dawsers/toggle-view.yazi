@@ -1,5 +1,7 @@
+--- @sync entry
 -- Toggle different views on/off: parent, current, preview
-local function entry(st, args)
+local function entry(st, job)
+  local args = job.args or job
   local action = args[1]
   if not action then
     return

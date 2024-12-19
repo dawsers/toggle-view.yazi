@@ -2,6 +2,10 @@
 
 Toggle the different views: parent, current and preview.
 
+## Requirements
+
+- [Yazi](https://github.com/sxyazi/yazi/) v0.4 or later.
+
 ## Installation
 
 ```sh
@@ -15,9 +19,9 @@ Add this to your `~/.config/yazi/keymap.toml`:
 ``` toml
 [manager]
 prepend_keymap = [
-    { on = "<C-1>", run = "plugin --sync toggle-view --args=parent", desc = "Toggle parent" },
-    { on = "<C-2>", run = "plugin --sync toggle-view --args=current", desc = "Toggle current" },
-    { on = "<C-3>", run = "plugin --sync toggle-view --args=preview", desc = "Toggle preview" },
+    { on = "<C-1>", run = "plugin toggle-view --args=parent", desc = "Toggle parent" },
+    { on = "<C-2>", run = "plugin toggle-view --args=current", desc = "Toggle current" },
+    { on = "<C-3>", run = "plugin toggle-view --args=preview", desc = "Toggle preview" },
 ]
 ```
 
